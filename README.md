@@ -2,7 +2,7 @@
 
 # chkusr
 
-chkusr is a set of programs to verify information about a user on UNIX based systems.
+chkusr is a set of programs to verify information about a user and/or group on UNIX based systems.
 
  * [The idea](#the-idea)
     * [Requirements](#requirements)
@@ -31,7 +31,7 @@ I needed some programs to verify some information about users and groups on a Li
 
 ### Requirements
 
-You need the PAM development package installed. On Alpine it is named linux-pam-dev, on Debian based systems it is named libpam0g-dev.
+You need the PAM development package installed. On Alpine it is named linux-pam-dev, on Debian based systems it is named libpam0g-dev. Not all programs require PAM but you need to edit the Makefile to disable PAM based programs in the build process.
 
 ### Configuration
 
