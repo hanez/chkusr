@@ -1,4 +1,4 @@
-# MERGED PROJECT!!! I WILL UPDATE THIS README IN THE NEXT DAYS!!! THE FOLLOWING DOCUMENTATION WILL NOT WORK ACTUALLY!
+# THE FOLLOWING DOCUMENTATION WILL NOT WORK ACTUALLY! YOU NEED TO READ THE CODE ACTUALLY, SORRY...
 
 # chkusr
 
@@ -19,6 +19,7 @@ chkusr is a set of programs to verify information about a user on UNIX based sys
           * [None interactive mode with username and password provided as arguments to chkpwd](#none-interactive-mode-with-username-and-password-provided-as-arguments-to-chkpwd)
           * [Request the result from the above commands](#request-the-result-from-the-above-commands)
     * [Custom build](#custom-build)
+ * [chkpwr](#chkpwr)
  * [Links](#links)
  * [License](#license)
 
@@ -127,6 +128,10 @@ Set MAX_UID and MIN_UID at compile time:
 ```
 gcc -Wall -DMAX_UID=1000 -DMIN_UID=1000 -o chkpwd chkpwd.c -lpam -lpam_misc
 ```
+
+## chkpwr
+
+A program to validate a string with a password rule. More to come...
 
 ## Links
 
