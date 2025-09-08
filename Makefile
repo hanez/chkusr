@@ -7,6 +7,7 @@ all:
 	$(CC) -Wall -o ./chkgrp-ng ./chkgrp-ng.c
 	$(CC) -Wall -o ./chkpwd ./chkpwd.c -lpam
 	gzip -fk ./chkpwd.1
+	$(CC) -Wall -o ./chkpwr ./chkpwr.c
 
 clean:
 	rm -f ./chkgrp
@@ -17,6 +18,7 @@ clean:
 	rm -f ./chkgrp-ng
 	rm -f ./chkpwd
 	rm -f ./chkpwd.1.gz
+	rm -f ./chkpwr
 	rm -f ./test
 
 install:
@@ -29,6 +31,7 @@ install:
 	install -g 0 -o 0 -m 0655 ./chkpwd /usr/bin/
 	install -g 0 -o 0 -m 0644 ./chkpwd.h /usr/include/
 	install -g 0 -o 0 -m 0644 ./chkpwd.1.gz /usr/share/man/man1/
+	install -g 0 -o 0 -m 0655 ./chkpwr /usr/bin/
 	install -g 0 -o 0 -m 0655 ./lua/chkgrp-native-min-extended.lua /usr/bin/
 
 uninstall:
@@ -40,6 +43,7 @@ uninstall:
 	rm -f /usr/bin/chkgrp-native-min-extended.lua
 	rm -f /usr/bin/chkgrp-ng
 	rm -f /usr/bin/chkpwd
+	rm -f /usr/bin/chkpwr
 	rm -f /usr/include/chkpwd.h
 	rm -f /usr/share/man/man1/chkpwd.1.gz
 

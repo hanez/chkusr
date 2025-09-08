@@ -8,5 +8,6 @@ chkgrp-native-min-extended
 chkgrp-ng
 chkpwd
 chkpwd.1.gz
+chkpwr
 test
 test.c

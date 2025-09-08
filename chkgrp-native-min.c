@@ -6,14 +6,11 @@
  * License: Apache-2.0 (see LICENSE)
  */
 
-#include "version.h"
+#include "config.h"
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-#define MAX_LINE 1024
-#define MAX_NAME 256
 
 int main(int argc, char *argv[])
 {

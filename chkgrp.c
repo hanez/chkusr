@@ -6,7 +6,7 @@
  * License: Apache-2.0 (see LICENSE)
  */
 
-#include "version.h"
+#include "config.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,10 +16,6 @@
 #include <unistd.h>
 #include <errno.h>
 #include <limits.h>
-
-#ifndef LOGIN_NAME_MAX
-#define LOGIN_NAME_MAX 256
-#endif
 
 int main(int argc, char *argv[])
 {
@@ -34,7 +30,7 @@ int main(int argc, char *argv[])
     // Runtime check for max name length
     long max_name_len = sysconf(_SC_LOGIN_NAME_MAX);
     if (max_name_len <= 0 || max_name_len > 1024) {
-        max_name_len = LOGIN_NAME_MAX;
+        max_name_len = MAX_NAME;
     }
 
     if (strlen(username) > (size_t)max_name_len) {

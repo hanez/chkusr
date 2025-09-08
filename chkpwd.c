@@ -8,7 +8,7 @@
  */
 
 #include "chkpwd.h"
-#include "version.h"
+#include "config.h"
 
 #include <stdbool.h>
 #include <stdio.h>
@@ -16,22 +16,6 @@
 #include <string.h>
 #include <termios.h>
 #include <unistd.h>
-
-#ifndef MAX_PASSWORD_LEN
-#define MAX_PASSWORD_LEN 256
-#endif
-
-#ifndef MAX_USERNAME_LEN
-#define MAX_USERNAME_LEN 32
-#endif
-
-#ifndef MAX_UID
-#define MAX_UID 1000
-#endif
-
-#ifndef MIN_UID
-#define MIN_UID 1000
-#endif
 
 // Function to prompt user for input, optionally hiding input
 void prompt_for_input(char *buffer, size_t size, const char *prompt,
@@ -98,28 +82,28 @@ int main(int argc, char *argv[])
 {
     bool verbose = false;
     bool version = false;
-    char password[MAX_PASSWORD_LEN] = {0};
-    char username[MAX_USERNAME_LEN] = {0};
+    char password[MAX_PASSWORD] = {0};
+    char username[MAX_NAME] = {0};
     int opt;
 
     // Parse command-line arguments
     while ((opt = getopt(argc, argv, "u:p:hvV")) != -1) {
         switch (opt) {
             case 'u':
-                if (strlen(optarg) >= MAX_USERNAME_LEN) {
+                if (strlen(optarg) >= MAX_NAME) {
                     fprintf(stderr, "Error: Username is too long (maximum %d characters).\n",
-                            MAX_USERNAME_LEN);
+                            MAX_NAME);
                     exit(1);
                 }
-                strncpy(username, optarg, MAX_USERNAME_LEN - 1);
+                strncpy(username, optarg, MAX_NAME - 1);
                 break;
             case 'p':
-                if (strlen(optarg) >= MAX_PASSWORD_LEN) {
+                if (strlen(optarg) >= MAX_PASSWORD) {
                     fprintf(stderr, "Error: Password is too long (maximum %d characters).\n",
-                            MAX_PASSWORD_LEN);
+                            MAX_PASSWORD);
                     exit(1);
                 }
-                strncpy(password, optarg, MAX_PASSWORD_LEN - 1);
+                strncpy(password, optarg, MAX_PASSWORD - 1);
                 break;
             case 'h':
                 print_usage(argv[0]);
