@@ -27,7 +27,7 @@ chkusr is a set of programs (chkgrp, chkpwd and chkpwr) to verify information ab
 
 ## The idea
 
-I needed some programs to verify some information about users and groups on a Linux/UNIX system just returning 0 on success and 1 on error. Some programs also return a message.
+I needed some programs to verify some information about users and groups on a Linux/UNIX system just returning 0 on success and 1 on error. Nonetheless, some programs also return a message.
 
 ### Requirements
 
