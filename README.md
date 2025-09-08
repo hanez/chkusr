@@ -139,7 +139,7 @@ gcc -Wall -DMAX_UID=1000 -DMIN_UID=1000 -o chkpwd chkpwd.c -lpam -lpam_misc
 
 ### chkpwr
 
-A program to validate a string with a password rule. More to come...
+A program that checks if an input string validates a password rule. More to come... look at the code!
 
 ## Links
 
